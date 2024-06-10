@@ -1,3 +1,4 @@
+import Image from "next/image";
 
 export default function RootLayout({
   children,
@@ -5,14 +6,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        
-        {/* Add any other head elements you need here */}
-      </head>
-      <body>
-        {children}
-      </body>
-    </html>
+    <main className="relative h-screen w-full">
+      <div className="absolute size-full">
+        <Image src="/images/bg-img.png" alt="background" fill className="size-full" />
+      </div>
+
+      {children}
+    </main>
   );
 }
